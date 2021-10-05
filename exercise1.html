@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Number</title>
+</head>
+<script>
+    function displaygreatest(){
+        var n1, n2, n3;
+        n1 = Number(document.getElementById("num1").value);
+        n2 = Number(document.getElementById("num2").value);
+        n3 = Number(document.getElementById("num3").value);
+        if((n1 > n2 && n1 > n3) || n1 == n2 || n1 == n3){
+            document.writeln("Greatest Number is: " + n1);
+        }
+        else if((n2 > n1 && n2 > n3) || n2 == n3){
+            document.writeln("Greatest Number is: " + n2);
+        }
+        else {
+            document.writeln("Greatest Number is: " + n3);
+        }
+    }
+</script>
+<body>
+    <h1>Greatest Number</h1>
+    <form>
+        <label for="num1">First Number: </label>
+        <input type="text" id="num1"/>
+        <label for="num2">Second Number: </label>
+        <input type="text" id="num2"/>
+        <label for="num3">Third Number: </label>
+        <input type="text" id="num3"/>
+    </form>
+    <button onclick="displaygreatest()">Calcuate</button>
+</body>
+</html>
