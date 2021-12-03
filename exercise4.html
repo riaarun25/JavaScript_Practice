@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Problem</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+
+        h1{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+        }
+        h2{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: darkblue;
+        }
+        button{
+            border-color: black;
+            background-color: darkcyan;
+            color:white;
+            padding: 7px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        input{
+            padding: 5px;
+            border-color: black;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1><center><u>GARAGE PROBLEM</u></center></h1>
+    <h2>Enter the deatils below:</h2>
+    <div class="data">
+        <h3>Enter customer name:</h3>
+        <input type="text" id="nam"><br>
+        <h3>Enter number of hours: </h3>
+        <input type="text" id="hrs"><br><br>
+        <button onclick="enter_data()">Add Data</button><br><br>
+    </div>
+    <button onclick="show_data()">Display data</button>
+    <button onclick="show_latest_data()">Show History</button><br>
+    <div class="answer">
+        <h3>Total Collection:</h3><span id="total"></span>
+    </div>
+    <h3>History:</h3>
+    <div class="all_Data">
+        <span id="0"></span><br>
+        <span id="1"></span><br>
+        <span id="2"></span><br>
+        <span id="3"></span><br>
+        <span id="4"></span><br>
+    </div>
+    <h3>Latest:</h3>
+    <span id="lat"> </span>
+    <script>
+    var arr=[];
+    var hrs=[];
+    var total_amt=[];
+    var count=0;
+    function enter_data() {
+        var hrs_place=parseFloat(document.getElementById('hrs').value);
+        var name=document.getElementById('nam').value;
+        arr.push(name);
+        hrs.push(hrs_place);
+        if(hrs_place <= 3){
+            total_amnt=parseFloat("2");
+            total_amt.push(total_amnt);
+        }
+        else if(hrs_place>3 && hrs_place <24){
+            total_amnt=2+(hrs_place-3)*0.50;
+            if(total_amnt>10){
+                total_amnt=10;
+                total_amt.push(total_amnt);
+            }
+            else{
+                total_amt.push(total_amnt);
+            }
+        }
+        else{
+            total_amt.push(parseFloat("10"));
+        }
+    }
+    function show_data(){
+        var sum=0;
+        for(var j=0;j<total_amt.length;j++){
+            sum=sum+total_amt[j];
+        }
+        document.getElementById('total').innerHTML=sum;
+        for(var i=0;i<arr.length-1;i++){
+            var data="Name="+arr[i]+"\tHours="+hrs[i]+"\tTotal amount="+total_amt[i];
+            var c=i.toString();
+            document.getElementById(c).innerHTML = data;
+        }
+        document.getElementById()
+    }
+    function show_latest_data(){
+        var n=arr.length;
+        var data="Name="+arr[n-1]+"\tHours="+hrs[n-1]+"\tTotal amount="+total_amt[n-1];
+        document.getElementById('lat').innerHTML= data;
+    }
+    </script>
+</body>
+</html>
