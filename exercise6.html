@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 6</title>
+    <script src="exercise6.js"></script>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+      }
+      form {
+        background-color: rgb(130, 200, 247);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border:1px solid black;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      #result {
+        width: 50%;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h1>Enter a number</h1>
+      <p>Click 'Submit' to check if the number is half increasing or half decreasing!</p>
+      <input type="text" id="num" placeholder="Enter a number" />
+      <input type="button" value="Submit" onclick="checkNum()" />
+    </form>
+    <div id="result"></div>
+  </body>
+</html>
