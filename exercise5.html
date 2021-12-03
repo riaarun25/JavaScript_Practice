@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Decoder</title>
+    <style>
+        body{
+            background-color:rgb(74, 192, 163);
+            margin: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 200;
+        }
+        button{
+            border: 1px;
+            border-radius: 5px;
+            padding: 7px;
+            background-color: black;
+            color: white;
+        }
+        input{
+            padding: 10px;
+            border-radius: 5px;
+            border: black;
+        }
+    </style>
+    <script>
+        var words=["Hypertext","Stylesheet","Language","JavaScript"];
+        var hintl=["Internet and Web Programming"]
+        var random=0;
+        var ward;
+        function start(){
+        var temp=words.length;
+        random= Math.floor(Math.random()* temp);
+        word=words[random];
+        var data=words[random];
+        var scr_word=document.getElementById("wrong").innerHTML.data;
+        scramble();
+        function scramble(){
+        var data=words[random];
+        var scr_word='';
+        var arr= [];
+        var no= Math.floor(Math.random()* data.length);
+        for(var i=0;i<data.length;){
+        var n= Math.floor(Math.random()*data.length);
+        if(arr.length== 0){
+        arr.push(n);
+        scr_word+=data[n];
+        }
+        var a=arr.index0f(n);
+        if (a==-1){
+        arr_push(n);
+        scr_word+=data[n];
+        }
+        if(scr_word.length==data. length){
+        break;
+        }
+        }
+        document.getElementRyId("wrong").innerHTML;
+        }
+        function submit(){
+        var input=document.getElementById('ans').value;
+        input=input.toUpperCase();
+        if(input==word){
+        alert("correct");
+        start();
+        }
+        else{
+        alert("Not correct");
+        }
+        }
+        }
+        function hint(){
+        var a=words.index0f(word);
+        alert(hintl[a]);
+        }
+        </script>
+</head>
+<body onload=start()>
+    <h1><center>WELCOME TO WORD DECODER!</center></h1>
+    <div class="game">
+    <div class="scrambled">
+        <span id="wrong" style="color:black">CAJSPVTRAI</span>
+    </div>
+    <div class="answer">
+    <input type="text" id="ans" placeholder="Enter your answer" width=180px height=30px><br><br>
+    </div>
+    <div class="buttons">
+        <button onclick="hint()">HINT</button><br><br>
+        <button onclick="submit()">Submit</button><br><br>
+        <button onclick="alert('Thank you')">I Quit</button><br>
+        <center><button style="margin-top:10px;" onclick="scramble()">Scrambled It!</button></center>
+    </div>
+    </div>
+</html>
