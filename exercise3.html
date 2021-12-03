@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Greeting</title>
+        <script type="text/javascript">
+        var count=1;
+        function change_image()
+        {
+            if(count===1){
+                document.getElementById("d1").innerHTML=("<img src=\"images_2.jpg\" alt=\"image 2\" width=\"300\" height=\"300\" id=\"i1\">");count=2;
+            }
+            else {
+            document.getElementById("d1").innerHTML=("<img src=\"images_1.jpg\" alt=\"image 1\" width=\"300\" height=\"300\" id=\"i1\">");count=1;}
+        }
+        function edit_text(form){document.getElementById("p1").innerHTML=form.edit.value;}
+        function position_right(){document.getElementById('i1').style.left=1050 + "px";}
+        function position_left(){document.getElementById('i1').style.left=0 + "px";}
+        function font_size(form){document.getElementById("p1").style.fontSize=form.size.value+"px";}
+        function font_color(form){document.getElementById("p1").style.color=form.col.value;}
+        function background(){if(count===1)document.body.style.backgroundImage="url('images_1.jpg')";elsedocument.body.style.backgroundImage="url('images_2.jpg')";}
+        </script>
+        <style>
+        #i1{position:relative;top:10px;}body{background-size: cover;}
+        </style>
+    </head>
+    <body>
+        <div id="d1">
+            <img src="images_1.jpg" alt="image 1" width="300" height="300" id="i1">
+        </div>
+        <p id="p1">Greetings!</p>
+        <input type='button' value="Change Image" onclick="change_image();">
+        <form><input type='text' name="edit">
+            <input type='button' value="Edit Text" onclick="edit_text(this.form);">
+        </form>
+        <input type='button' value="Right" onclick="position_right();">
+        <input type='button' value="Left" onclick="position_left();">
+        <input type='button' value="Background" onclick="background();">
+        <form>
+            <input type='number' name="size">
+            <input type='button' value="Set Font Size" onclick="font_size(this.form);">
+        </form>
+        <form>
+            <input type='text' name="col">
+            <input type='button' value="Set Font Color" onclick="font_color(this.form);">
+        </form>
+    </body>
+</html>
+
